@@ -1,0 +1,99 @@
+body{
+    height: 100%;
+    background: url("https://pixy.org/src/475/4751502.png"); /* edit the sites background here; whether it is an image or color */
+    color: #FFFFFF; /* the page's default font color */
+    font-size: 16px; /* the page's default font size */
+    margin: 0;
+}
+
+#links{ 
+    width:770px; 
+    border-color:#FFFFFF; 
+    border-style:solid; 
+    border-width:0px; 
+    border-top-width:1px; 
+    border-bottom-width:1px; }
+#links td{ 
+    background-color:#333333; 
+    text-align:center; 
+    vertical-align:top; 
+    padding: 2px; 
+}
+
+#links a:link, section.copyright a:link{ 
+    font-size: 12pt; 
+    text-decoration: none; 
+    font-weight:bold; 
+    color: #858585; 
+    transition-duration: 0.8s; 
+}
+#links a:visited, section.copyright a:visited{ 
+    font-size: 12pt; 
+    text-decoration: none; 
+    font-weight:bold; 
+    color: #858585; 
+}
+
+#links a:hover, section.copyright a:hover{ 
+    font-size: 12pt; 
+    text-decoration: underline; 
+    font-weight:bold; 
+    color: #FFFFFF; 
+    text-shadow: 1px 1px 2px 
+        black, 0 0 25px 
+        green, 0 0 15px green; 
+
+}
+#links a:active, section.copyright a:active{ 
+    font-size: 12pt; 
+    text-decoration: none; 
+    font-weight:bold; 
+    color: #FFFFFF; 
+}
+
+#heading{
+    margin-right: 330px;
+    font-family: serif;
+    font-size: 50px;
+    color: #00CC00;
+    text-shadow: 1px 8px 2px 
+        black, 0 0 25px 
+        green, 0 0 20px; 
+}
+
+#title{
+    color: #00CC00;
+    text-decoration: none;
+}
+
+
+section.copyright{
+
+    height: 50px;
+}
+
+section.copyright table{
+     border-color:#FFFFFF; 
+    border-style:solid; 
+    border-width:0px; 
+    border-top-width:1px;
+    border-bottom-width:1px;
+    padding: 5px;
+}
+
+
+
+#content{
+    min-height: calc(82vh - 70px);
+    
+    /* Make the size of your contents section however big you want! 
+    Uncomment the below attribute if you wish to do so.*/
+    width: 1000px;
+}
+
+
+#message{
+    width: 300px;
+    height: 200px;
+    
+}

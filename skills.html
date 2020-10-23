@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>Dan's Portfolio</title>
+<link rel="stylesheet" href="normalize.css">
+<link rel="stylesheet" href="index.css">    
+
+<script>    
+function loadDoc(content, pushState) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      // this will grab the content section on the page and integrate the content from the text/html file component into it
+      document.getElementById("content").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", content, true);
+  xhttp.send();
+  history.pushState(null, '', pushState);
+}
+    
+loadDoc("content_components/skills.html", "./skills.html") // initial load, modify for each page
+
+    
+    
+//The following function is for the email form in the contacts page only.
+    
+function checkForm(form) {
+    // get all the inputs within the submitted form
+    var inputs = form.getElementsByTagName('input');
+    var textarea = form.getElementsByTagName('textarea');
+    for (var i = 0; i < inputs.length; i++) {
+        // only validate the inputs that have the required attribute
+        if(inputs[i].hasAttribute("isrequired")){
+            if(inputs[i].value == ""){
+                // found an empty field that is required
+                alert("Please fill all required fields!");
+                return false;
+            }
+        }
+    }
+    
+    for (var i = 0; i < textarea.length; i++) {
+        // only validate the inputs that have the required attribute
+        if(textarea[i].hasAttribute("isrequired")){
+            if(textarea[i].value == ""){
+                // found an empty field that is required
+                alert("Please fill all required fields!");
+                return false;
+            }
+        }
+    }
+    return true;
+}
+</script>
+
+</head>
+
+<body>
+<center>
+    <h1 id="heading"><i><a href=index.html id="title">Dan's Brief Portfolio</a></i></h1>
+ 
+<!-- When any of these links are clicked, they will call our AJAX javascript function to request data from the web server to load the desired content component in the content section, right below our links. -->
+<section>
+  <table id="links">
+    <tbody><tr>
+     <td width="10%">
+      <a href="javascript:void(0);" onclick="loadDoc(&quot;content_components/homepage.html&quot;, &quot;./index.html&quot;)">Home</a>
+     </td>
+     <td width="10%">
+      <a href="javascript:void(0);" onclick="loadDoc(&quot;content_components/skills.html&quot;, &quot;./skills.html&quot;)">Skills</a>
+     </td>
+     <td width="10%">
+      <a href="javascript:void(0);" onclick="loadDoc(&quot;content_components/projects.html&quot;, &quot;./projects.html&quot;)">Projects</a>
+     </td>
+     <td width="10%">
+      <a href="javascript:void(0);" onclick="loadDoc(&quot;content_components/contact.html&quot;, &quot;./contact.html&quot;)">Contact</a>
+     </td>
+    </tr>
+   </tbody></table>
+</section>
+<br><br>
+<section id="content">
+<!-- Content components will be loaded here -->
+</section>
+
+    <!-- DO NOT REMOVE -->
+        <section class="copyright">
+            <table><tr>
+                <td>Copyright 2020: Simplistic JS+CSS v1.0 - <a href=https://realslinksoft.wixsite.com/slink-soft-portfolio target="_blank"> SlinkSoft</a> Webpage Designs - All Rights Reserved</td>
+            </tr></table>
+        </section>
+</center>
+</body>
+
+</html>
